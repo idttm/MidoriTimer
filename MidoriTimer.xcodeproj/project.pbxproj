@@ -14,6 +14,12 @@
 		3E51228E26387E1200C5A0C7 /* MidoriTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E51228C26387E1200C5A0C7 /* MidoriTimer.xcdatamodeld */; };
 		3E51229026387E1D00C5A0C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E51228F26387E1D00C5A0C7 /* Assets.xcassets */; };
 		3E51229326387E1D00C5A0C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E51229126387E1D00C5A0C7 /* LaunchScreen.storyboard */; };
+		3E59563F2644848400174FE4 /* DataPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E59563E2644848400174FE4 /* DataPlist.plist */; };
+		3E601DE3264580E600D1AE7D /* StructJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E601DE2264580E600D1AE7D /* StructJSON.swift */; };
+		3E601DE72645857300D1AE7D /* textJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E601DE62645857200D1AE7D /* textJSON.json */; };
+		3E601DE92645C8E300D1AE7D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E601DE82645C8E300D1AE7D /* TableViewController.swift */; };
+		3E601DEB2645CE7000D1AE7D /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E601DEA2645CE7000D1AE7D /* NoteViewController.swift */; };
+		3E601DED2645DA8B00D1AE7D /* ParseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E601DEC2645DA8B00D1AE7D /* ParseJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		3E51228F26387E1D00C5A0C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E51229226387E1D00C5A0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E51229426387E1D00C5A0C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E59563E2644848400174FE4 /* DataPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DataPlist.plist; sourceTree = "<group>"; };
+		3E601DE2264580E600D1AE7D /* StructJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructJSON.swift; sourceTree = "<group>"; };
+		3E601DE62645857200D1AE7D /* textJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = textJSON.json; sourceTree = "<group>"; };
+		3E601DE82645C8E300D1AE7D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		3E601DEA2645CE7000D1AE7D /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		3E601DEC2645DA8B00D1AE7D /* ParseJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +73,16 @@
 				3E51228326387E1200C5A0C7 /* AppDelegate.swift */,
 				3E51228526387E1200C5A0C7 /* SceneDelegate.swift */,
 				3E51228726387E1200C5A0C7 /* ViewController.swift */,
+				3E601DE2264580E600D1AE7D /* StructJSON.swift */,
+				3E601DE82645C8E300D1AE7D /* TableViewController.swift */,
+				3E601DEA2645CE7000D1AE7D /* NoteViewController.swift */,
+				3E601DEC2645DA8B00D1AE7D /* ParseJSON.swift */,
 				3E51228926387E1200C5A0C7 /* Main.storyboard */,
 				3E51228F26387E1D00C5A0C7 /* Assets.xcassets */,
 				3E51229126387E1D00C5A0C7 /* LaunchScreen.storyboard */,
+				3E601DE62645857200D1AE7D /* textJSON.json */,
 				3E51229426387E1D00C5A0C7 /* Info.plist */,
+				3E59563E2644848400174FE4 /* DataPlist.plist */,
 				3E51228C26387E1200C5A0C7 /* MidoriTimer.xcdatamodeld */,
 			);
 			path = MidoriTimer;
@@ -130,6 +148,8 @@
 				3E51229326387E1D00C5A0C7 /* LaunchScreen.storyboard in Resources */,
 				3E51229026387E1D00C5A0C7 /* Assets.xcassets in Resources */,
 				3E51228B26387E1200C5A0C7 /* Main.storyboard in Resources */,
+				3E59563F2644848400174FE4 /* DataPlist.plist in Resources */,
+				3E601DE72645857300D1AE7D /* textJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,10 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E601DEB2645CE7000D1AE7D /* NoteViewController.swift in Sources */,
 				3E51228826387E1200C5A0C7 /* ViewController.swift in Sources */,
+				3E601DE92645C8E300D1AE7D /* TableViewController.swift in Sources */,
 				3E51228E26387E1200C5A0C7 /* MidoriTimer.xcdatamodeld in Sources */,
 				3E51228426387E1200C5A0C7 /* AppDelegate.swift in Sources */,
 				3E51228626387E1200C5A0C7 /* SceneDelegate.swift in Sources */,
+				3E601DE3264580E600D1AE7D /* StructJSON.swift in Sources */,
+				3E601DED2645DA8B00D1AE7D /* ParseJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6RLZ99668;
 				INFOPLIST_FILE = MidoriTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +325,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Andrew-Cheberyako.MidoriTimer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6RLZ99668;
 				INFOPLIST_FILE = MidoriTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,7 +345,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Andrew-Cheberyako.MidoriTimer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

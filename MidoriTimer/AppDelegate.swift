@@ -7,13 +7,18 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+   
+    let window: UIWindow? = nil
+    let jsonTest = ParseJSON.shared.self
+    let notificationCenter = UNUserNotificationCenter.current()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        requestAutorization()
+        notificationCenter.delegate = self
         // Override point for customization after application launch.
         return true
     }
@@ -76,6 +81,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    func requestAutorization() {
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge,]) { granted, Error in
+            print("permssion grande \(granted)")
+            guard granted else {return}
+            self.getNotificationSettings()
+        }
+    }
+    func getNotificationSettings() {
+        notificationCenter.getNotificationSettings { (settings) in
+            print("notification setting: \(settings)")
+        }
+    }
+    func scheduleNotification(notifaicationType: String) {
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = notifaicationType
+        content.body = "Я молодец" + notifaicationType
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        
+        let identifire = "local notification"
+        
+        let request = UNNotificationRequest(identifier: identifire, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+//    let date = Date(timeIntervalSinceNow: 3600)
+//    let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: Date(timeIntervalSinceNow: 3600))
+//    let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
 
+}
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print(#function)
+        completionHandler([.list,.banner,.sound])
+    }
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.notification.request.identifier == "reminderNotificationId" {
+           print("oohhhooo")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if  let conversationVC = storyboard.instantiateViewController(withIdentifier: "NoteViewController") as? NoteViewController,
+                let navigationVC = self.window?.rootViewController as? UINavigationController {
+                
+                navigationVC.present(conversationVC, animated: true, completion: nil)
+                navigationVC.pushViewController(conversationVC, animated: true)
+//                jsonTest.loadJson()
+//                let arrayTest = jsonTest.test
+//                let randomElementArray = arrayTest[randomNomber]
+//                conversationVC.noteArrayDate.append(randomElementArray)
+            }
+            
+            
+        }
+        completionHandler()
+    
+    }
 }
 
